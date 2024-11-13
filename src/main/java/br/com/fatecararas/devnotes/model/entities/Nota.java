@@ -18,11 +18,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity(name = "notas")
 public class Nota {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 500, nullable = false)
     private String conteudo;
+
     @ManyToOne
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
